@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol赤tica de Privacidad - Estelar Latam</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/estelarlatam/website/refs/heads/main/resources/logo-oficial-de-estelar-latam.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/estelarlatam/website/refs/heads/main/resources/logo-oficial-de-estelar-latam.png">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 25%, #7b2cbf 75%, #ff006e 100%);
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --bg-body: #ffffff;
+            --bg-section: #f8f9fa;
+            --border-color: #e0e0e0;
+            --link-color: #0072ff;
+            --accent-color: #003399;
+            --spain-red: #aa151b;
+            --spain-yellow: #f1bf00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Header */
+        .privacy-header {
+            background: var(--primary-gradient);
+            padding: 60px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .header-logo-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 16px;
+        }
+
+        .header-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Contenido */
+        .content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: white;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .rgpd-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #003399 0%, #0066cc 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 51, 153, 0.3);
+        }
+
+        article {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8f0fe;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 28px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Cajas destacadas */
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #17a2b8;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box strong {
+            color: #0c5460;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box strong {
+            color: #856404;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .danger-box strong {
+            color: #721c24;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-box strong {
+            color: #155724;
+        }
+
+        /* Listas */
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        /* Tablas */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--bg-section);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Enlaces y contacto */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--link-color);
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+            background: rgba(0, 114, 255, 0.05);
+        }
+
+        .contact-highlight {
+            background: var(--bg-section);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            text-align: center;
+            border: 2px solid var(--border-color);
+        }
+
+        .contact-highlight strong {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .privacy-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-address {
+            margin-top: 20px;
+            padding: 24px;
+            background: var(--bg-section);
+            border-radius: 8px;
+            border-top: 3px solid var(--spain-red);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 40px 24px;
+            }
+            
+            .page-title {
+                font-size: 1.9rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .data-table {
+                font-size: 0.9rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 12px;
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 198, 255, 0.1) 0%, rgba(255, 0, 110, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="privacy-header">
+        <div class="header-logo-container">
+            <img src="https://raw.githubusercontent.com/estelarlatam/website/refs/heads/main/resources/logo-oficial-de-estelar-latam.png" alt="Estelar Latam Logo" class="header-logo">
+            <h1 class="page-title">Pol赤tica de Privacidad</h1>
+            <p class="subtitle">Protecci車n de datos personales conforme al RGPD y LOPDGDD</p>
+        </div>
+    </header>
+
+    <main class="content-container">
+        
+        <div class="last-updated">
+            <div class="rgpd-badge">???? UE - RGPD Compliant</div>
+            <br>
+            <strong>Fecha de 迆ltima actualizaci車n:</strong> 31 de enero de 2026<br>
+            <strong>Responsable:</strong> Estelar Latam, con domicilio en Pamplona, Espa?a<br>
+            <strong>Registro AEPD:</strong> [N迆mero de registro a determinar]
+        </div>
+
+        <!-- INTRODUCCI車N -->
+        <article>
+            <h2>?? Informaci車n general</h2>
+            
+            <p>
+                En <strong>Estelar Latam</strong>, entendemos la privacidad como un derecho fundamental. Esta Pol赤tica de Privacidad describe c車mo recopilamos, utilizamos, protegemos y compartimos tus datos personales cuando utilizas nuestra plataforma VTuber (<strong>estelarlatam.com</strong> y aplicaciones asociadas), con sede tecnol車gica y operativa en <strong>Pamplona, Navarra, Espa?a</strong>.
+            </p>
+
+            <div class="info-box">
+                <strong>Marco normativo aplicable:</strong> Este tratamiento de datos se rige por el <strong>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD)</strong>, la <strong>Ley Org芍nica 3/2018, de 5 de diciembre, de Protecci車n de Datos Personales y garant赤a de los derechos digitales (LOPDGDD)</strong>, y la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci車n y de Comercio Electr車nico (LSSI-CE)</strong>.
+            </div>
+
+            <p>
+                Al registrarte o utilizar Estelar Latam, declaras que has le赤do y comprendido esta Pol赤tica. Si no est芍s de acuerdo, por favor no utilices nuestros servicios.
+            </p>
+        </article>
+
+        <!-- RESPONSABLE -->
+        <article>
+            <h2>?? Responsable del Tratamiento</h2>
+            
+            <div class="contact-highlight">
+                <strong>Identidad:</strong> Estelar Latam<br>
+                <strong>Direcci車n f赤sica:</strong> Pamplona, Navarra, Reino de Espa?a<br>
+                <strong>Correo electr車nico:</strong> <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a><br>
+                <strong>Delegado de Protecci車n de Datos (DPO):</strong> estelarlatam.oficial@gmail.com<br>
+                <small>(Para ejercicio de derechos RGPD, consultas sobre privacidad y notificaciones de seguridad)</small>
+            </div>
+
+            <p>
+                Estelar Latam act迆a como <strong>Responsable del Tratamiento</strong> de tus datos personales, definiendo los medios, fines y procedimientos del tratamiento, conforme al art赤culo 4.7 del RGPD.
+            </p>
+        </article>
+
+        <!-- DATOS QUE RECOGEMOS -->
+        <article>
+            <h2>??? Datos personales que tratamos</h2>
+            
+            <p>
+                Para prestarte nuestros servicios de plataforma VTuber, recopilamos las siguientes categor赤as de datos:
+            </p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Categor赤a de datos</th>
+                        <th>Ejemplos espec赤ficos</th>
+                        <th>Finalidad principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Datos de identidad y contacto</strong></td>
+                        <td>Nombre art赤stico VTuber, correo electr車nico (estelarlatam.oficial@gmail.com o personal), identificadores de redes sociales vinculadas, n迆mero de tel谷fono (opcional), direcci車n postal completa (solo para creadores monetizados, necesaria para obligaciones fiscales espa?olas).</td>
+                        <td>Gesti車n de cuenta, autenticaci車n, comunicaciones legales, pagos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Datos biom谷tricos especiales</strong> (Art. 9 RGPD)</td>
+                        <td><span class="highlight">Mapas faciales anonimizados</span> (landmarks para face tracking VRM), datos de expresiones faciales capturados por c芍mara, movimientos de cabeza y parpadeo. <strong>Nota:</strong> El video raw de tu rostro <strong>nunca</strong> se transmite a nuestros servidores; el procesamiento es local (client-side).</td>
+                        <td>Animaci車n del avatar VTuber en tiempo real.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Datos de contenido</strong></td>
+                        <td>Grabaciones de streaming, historial de chat, donaciones/mensajes enviados, im芍genes de avatar subidas, configuraciones de escena, metadatos de transmisiones (duraci車n, horarios, espectadores concurrentes).</td>
+                        <td>Prestaci車n del servicio, moderaci車n, mejoras de plataforma.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Datos t谷cnicos y de uso</strong></td>
+                        <td>Direcci車n IP (anonimizada despu谷s de 30 d赤as), identificadores de dispositivo, tipo de navegador/OS, logs de acceso, cookies t谷cnicas, tiempos de uso, interacciones con la interfaz.</td>
+                        <td>Seguridad, prevenci車n de fraudes, optimizaci車n t谷cnica.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Datos financieros</strong> (Solo creadores)</td>
+                        <td>IBAN espa?ol o internacional, titularidad de cuenta bancaria, identificaci車n fiscal (NIF/CIF/NIE para residentes en Espa?a; TIN equivalente para latinoamericanos), historial de transacciones en Estelas.</td>
+                        <td>Pago de royalties, cumplimiento fiscal ante Agencia Tributaria espa?ola.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Datos de menores</strong></td>
+                        <td>Edad verificada, consentimiento parental documentado (para usuarios 13-16 a?os), restricciones de funcionalidad aplicadas.</td>
+                        <td>Cumplimiento legal de protecci車n infantil.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>Datos sensibles:</strong> Los datos biom谷tricos (art赤culo 9 del RGPD) se consideran categor赤a especial. En Estelar Latam, utilizamos tecnolog赤a de procesamiento perif谷rico (edge computing) para que tus rasgos faciales nunca abandonen tu dispositivo, salvo que actives expl赤citamente "Mejorar tracking" (basado en el art赤culo 9.2.a del RGPD - consentimiento expl赤cito).
+            </div>
+        </article>
+
+        <!-- BASE JUR赤DICA -->
+        <article>
+            <h2>?? Base jur赤dica para el tratamiento</h2>
+            
+            <p>
+                Seg迆n el art赤culo 6 del RGPD, tratamos tus datos bas芍ndonos en las siguientes bases legales:
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Ejecuci車n de contrato (Art. 6.1.b RGPD):</strong> Para proporcionarte acceso a la plataforma, alojar tus streams, procesar pagos entre usuarios (Estelas), y permitir la animaci車n de tu avatar VTuber. Sin estos datos, no podr赤amos prestarte el servicio.
+                </li>
+                
+                <li>
+                    <strong>Consentimiento expl赤cito (Art. 6.1.a y 9.2.a RGPD):</strong> Para el procesamiento de datos biom谷tricos faciales (cuando optas por mejorar el tracking mediante nuestros servidores), env赤o de newsletters comerciales, y uso de cookies no esenciales (anal赤ticas/marketing). Puedes retirar este consentimiento en cualquier momento desde Configuraci車n > Privacidad.
+                </li>
+
+                <li>
+                    <strong>Cumplimiento de obligaci車n legal (Art. 6.1.c RGPD):</strong> Para retenciones fiscales ante la Agencia Tributaria espa?ola (IRPF, IRNR), prevenci車n de blanqueo de capitales (Ley 10/2010), cooperaci車n con autoridades judiciales espa?olas, y reportes obligatorios de explotaci車n infantil.
+                </li>
+
+                <li>
+                    <strong>Inter谷s leg赤timo (Art. 6.1.f RGPD):</strong> Para la seguridad de la red, prevenci車n de spam/fraudes, moderaci車n de contenido ilegal, y an芍lisis agregados (estad赤sticos) para mejorar la plataforma, siempre que no prevalezcan tus derechos y libertades fundamentales.
+                </li>
+            </ol>
+        </article>
+
+        <!-- FINALIDAD -->
+        <article>
+            <h2>?? Finalidades espec赤ficas del tratamiento</h2>
+            
+            <h3>1. Prestaci車n del servicio VTuber</h3>
+            <p>
+                Utilizamos tus datos para autenticarte, sincronizar tu avatar VRM, procesar la captura de movimiento (local o remota seg迆n tu configuraci車n), almacenar tus transmisiones (si activas "Guardar repeticiones"), y facilitar la interacci車n chat-espectador en tiempo real.
+            </p>
+
+            <h3>2. Monetizaci車n y pagos</h3>
+            <p>
+                Si eres creador, procesamos tus datos fiscales y bancarios para realizar transferencias SEPA (desde Espa?a hacia Europa) o SWIFT (hacia Latinoam谷rica), emitir comprobantes fiscales, y cumplir con la normativa espa?ola de prevenci車n de fraude financiero.
+            </p>
+
+            <h3>3. Seguridad y moderaci車n</h3>
+            <p>
+                Analizamos patrones de comportamiento (machine learning) para detectar cuentas falsas, bots, grooming de menores, o manipulaci車n de rankings. Conservamos logs de IP temporalmente para prevenir ataques DDoS y accesos no autorizados.
+            </p>
+
+            <h3>4. Comunicaciones</h3>
+            <p>
+                Enviamos notificaciones t谷cnicas (cambio de contrase?a, alertas de seguridad) basadas en inter谷s leg赤timo, y comunicaciones comerciales (nuevas funciones, eventos) solo si has prestado consentimiento expl赤cito.
+            </p>
+        </article>
+
+        <!-- CONSERVACI車N -->
+        <article>
+            <h2>?? Per赤odos de conservaci車n</h2>
+            
+            <p>
+                Conservamos tus datos personales durante el tiempo necesario para cumplir con las finalidades descritas y obligaciones legales:
+            </p>
+
+            <ul>
+                <li><strong>Datos de cuenta activa:</strong> Mientras mantengas tu cuenta registrada en Estelar Latam y durante los 迆ltimos accesos.</li>
+                
+                <li><strong>Datos de streaming/chat:</strong> 24 meses desde la emisi車n (para moderaci車n y resoluci車n de disputas), salvo que solicites borrado anticipado (derecho al olvido).</li>
+                
+                <li><strong>Datos biom谷tricos (modo mejora):</strong> 12 meses m芍ximo desde la 迆ltima actualizaci車n, o hasta que revocases el consentimiento.</li>
+                
+                <li><strong>Datos financieros:</strong> 6 a?os conforme al C車digo Civil espa?ol (prescripci車n de obligaciones tributarias y mercantiles).</li>
+                
+                <li><strong>Datos de menores (cuentas canceladas):</strong> Eliminaci車n inmediata tras 30 d赤as de inactividad, conforme al art赤culo 8 del RGPD y principio de minimizaci車n.</li>
+                
+                <li><strong>Logs de seguridad:</strong> 30 d赤as (direcciones IP anonimizadas despu谷s de este per赤odo).</li>
+            </ul>
+
+            <p>
+                Pasados estos plazos, los datos se eliminan de forma segura mediante t谷cnicas de sobreescritura o se anonimizan permanentemente para an芍lisis estad赤sticos agregados que no permitan identificaci車n.
+            </p>
+        </article>
+
+        <!-- DESTINATARIOS -->
+        <article>
+            <h2>?? Destinatarios de los datos</h2>
+            
+            <p>
+                Tus datos personales pueden ser compartidos con:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Encargados de tratamiento (especializados):</strong> Proveedores de hosting cloud (con sede en UE/Espacio Econ車mico Europeo), servicios de autenticaci車n (Google, Apple - bajo acuerdos GDPR), procesadores de pago registrados en el Banco de Espa?a, y herramientas de an芍lisis t谷cnico. Todos operan bajo contrato de encargado de tratamiento conforme al art赤culo 28 del RGPD.
+                </li>
+
+                <li>
+                    <strong>Autoridades espa?olas:</strong> Agencia Tributaria (AEAT), Polic赤a Nacional, Guardia Civil ( Centro Nacional de Desaparecidos y Explotaci車n Sexual de Menores), Juzgados y Tribunales de Pamplona/Navarra, cuando exista obligaci車n legal o requerimiento judicial fundado.
+                </li>
+
+                <li>
+                    <strong>Otros usuarios (datos p迆blicos):</strong> Tu nombre art赤stico VTuber, avatar, descripci車n p迆blica, streams p迆blicos y mensajes en chat son visibles para todos los usuarios de la plataforma. <strong>No compartimos</strong> tu email real, direcci車n postal ni datos fiscales con otros usuarios.
+                </li>
+
+                <li>
+                    <strong>Sociedades del grupo o sucesores:</strong> En caso de fusi車n, adquisici車n o reestructuraci車n corporativa de Estelar Latam, siempre bajo garant赤as contractuales de protecci車n de datos.
+                </li>
+            </ul>
+
+            <div class="success-box">
+                <strong>Venta de datos:</strong> Estelar Latam <strong>nunca</strong> vender芍 tus datos personales a terceros con fines publicitarios ni comerciales ajenos a nuestro servicio. Nuestro modelo de negocio se basa en transacciones dentro de la plataforma (Estelas), no en la explotaci車n de datos personales.
+            </div>
+        </article>
+
+        <!-- TRANSFERENCIAS INTERNACIONALES -->
+        <article>
+            <h2>?? Transferencias internacionales</h2>
+            
+            <p>
+                Dado nuestro enfoque iberoamericano, algunos datos pueden transferirse fuera del Espacio Econ車mico Europeo (EEE):
+            </p>
+
+            <h3>Hacia Latinoam谷rica (Brasil, M谷xico, Argentina, Colombia, etc.)</h3>
+            <p>
+                Cuando un creador residente en Latinoam谷rica recibe pagos, o un espectador accede desde dichos pa赤ses, los datos pueden procesarse temporalmente en servidores locales para reducir latencia. Estas transferencias se realizan:
+            </p>
+            <ul>
+                <li>Bajo decisiones de adecuaci車n de la Comisi車n Europea (para pa赤ses con nivel de protecci車n adecuado).</li>
+                <li>Mediante <strong>cl芍usulas contractuales tipo (SCC)</strong> aprobadas por la Comisi車n Europea (art赤culo 46.2.c del RGPD).</li>
+                <li>Con garant赤as adicionales t谷cnicas (encriptaci車n AES-256 en tr芍nsito y reposo).</li>
+            </ul>
+
+            <h3>Hacia Estados Unidos (herramientas tecnol車gicas)</h3>
+            <p>
+                Algunas herramientas auxiliares (cloud hosting, servicios de email) pueden operar bajo el <strong>Data Privacy Framework (DPF)</strong> UE-EEU, o mediante SCC con Garant赤as Suplementarias (Transfer Impact Assessments) para compensar posibles accesos por leyes extranjeras (FISA, CLOUD Act).
+            </p>
+
+            <div class="info-box">
+                Puedes solicitar copia de las garant赤as contractuales (SCC) mediante email a <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a>.
+            </div>
+        </article>
+
+        <!-- DERECHOS -->
+        <article>
+            <h2>? Tus derechos (RGPD)</h2>
+            
+            <p>
+                Como usuario de Estelar Latam, tienes los siguientes derechos respecto a tus datos personales:
+            </p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Derecho</th>
+                        <th>Descripci車n</th>
+                        <th style="width: 30%;">C車mo ejercerlo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Acceso</strong><br>(Art. 15 RGPD)</td>
+                        <td>Saber qu谷 datos tuyos tratamos, finalidades, plazos de conservaci車n y destinatarios.</td>
+                        <td>Solicitud escrita al DPO v赤a <a href="mailto:estelarlatam.oficial@gmail.com">email</a> con copia de tu DNI/pasaporte.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rectificaci車n</strong><br>(Art. 16 RGPD)</td>
+                        <td>Corregir datos inexactos o incompletos (email, datos bancarios, etc.).</td>
+                        <td>Preferentemente desde Configuraci車n > Perfil, o por email si requiere verificaci車n.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Supresi車n<br>("Olvido")</strong><br>(Art. 17 RGPD)</td>
+                        <td>Eliminar tus datos cuando ya no sean necesarios, hayas retirado el consentimiento, o te opongas al tratamiento.</td>
+                        <td>Funci車n "Eliminar cuenta" disponible en Configuraci車n > Seguridad, o solicitud expresa al DPO.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Limitaci車n</strong><br>(Art. 18 RGPD)</td>
+                        <td>Marcar datos como "bloqueados" (sin uso ni borrado) mientras contestamos a una rectificaci車n o oposici車n.</td>
+                        <td>Solicitud expresa indicando motivo de impugnaci車n.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Portabilidad</strong><br>(Art. 20 RGPD)</td>
+                        <td>Recibir tus datos en formato estructurado (.JSON, .CSV) para llevarlos a otra plataforma.</td>
+                        <td>Solicitud al DPO. Plazo de entrega: 30 d赤as h芍biles.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oposici車n</strong><br>(Art. 21 RGPD)</td>
+                        <td>Oponerte al tratamiento basado en inter谷s leg赤timo (marketing, an芍lisis de comportamiento).</td>
+                        <td>Enlace "Darme de baja" en emails, o Configuraci車n > Privacidad.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>Plazos de respuesta:</strong> Responderemos a todas las solicitudes dentro de los <strong>30 d赤as naturales</strong> siguientes a la recepci車n, prorrogables a 60 d赤as por complejidad (notific芍ndote dentro del primer mes). El ejercicio de derechos es <strong>gratuito</strong>, salvo solicitudes manifestamente infundadas o excesivas (art赤culo 12.5 RGPD).
+            </div>
+
+            <h3>Procedimiento para ejercer derechos</h3>
+            <ol>
+                <li>Env赤a email a <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a> con asunto "Ejercicio Derecho RGPD - [Tu nombre art赤stico]".</li>
+                <li>Adjunta copia de tu DNI, NIE o Pasaporte por ambas caras (puedes tachar datos no necesarios si solo acreditan identidad).</li>
+                <li>Especifica claramente qu谷 derecho ejerces y sobre qu谷 datos (ejemplo: "Solicito supresi車n de mi cuenta y todos los streams asociados").</li>
+                <li>Indica domicilio f赤sico completo (para notificaciones si fuera necesario) y m谷todo de respuesta preferido (email/certificado).</li>
+            </ol>
+
+            <p>
+                Si consideras que no hemos atendido adecuadamente tus derechos, puedes presentar <strong>reclamaci車n ante la Agencia Espa?ola de Protecci車n de Datos (AEPD)</strong>: Jorge Juan 6, 28001 Madrid, o a trav谷s de <a href="https://www.aepd.es">www.aepd.es</a>.
+            </p>
+        </article>
+
+        <!-- SEGURIDAD -->
+        <article>
+            <h2>?? Medidas de seguridad</h2>
+            
+            <p>
+                Estelar Latam implementa medidas t谷cnicas y organizativas conforme al art赤culo 32 del RGPD (Resumen de Seguridad de la Informaci車n):
+            </p>
+
+            <ul>
+                <li><strong>Pseudonimizaci車n:</strong> Tus datos biom谷tricos faciales se convierten inmediatamente en vectores num谷ricos irreversibles (no almacenamos fotos de tu rostro).</li>
+                
+                <li><strong>Encriptaci車n:</strong> TLS 1.3 para datos en tr芍nsito (https), AES-256 para datos en reposo en servidores ubicados en la Uni車n Europea.</li>
+                
+                <li><strong>Control de acceso:</strong> Autenticaci車n multifactor (MFA) disponible para creadores monetizados; acceso restringido al personal autorizado bajo principio de "m赤nimo acceso necesario".</li>
+                
+                <li><strong>Resiliencia:</strong> Backups diarios en localizaci車n geogr芍fica separada (dentro de Espa?a/UE), planes de recuperaci車n ante desastres.</li>
+                
+                <li><strong>Testing:</strong> Auditor赤as de seguridad peri車dicas (pentesting) por empresas especializadas registradas en el Registro Nacional de Modelos de Gesti車n de Ciberseguridad (ENS) espa?ol.</li>
+            </ul>
+
+            <div class="danger-box">
+                <strong>Notificaci車n de brechas:</strong> En caso de violaci車n de seguridad que afecte tus datos personales (robo, acceso no autorizado), te notificaremos sin dilaci車n indebida (m芍ximo 72 horas desde el conocimiento) mediante correo electr車nico y publicaci車n en estelarlatam.com/status, conforme al art赤culo 33 y 34 del RGPD.
+            </div>
+        </article>
+
+        <!-- COOKIES -->
+        <article>
+            <h2>?? Pol赤tica de Cookies</h2>
+            
+            <p>
+                Utilizamos cookies y tecnolog赤as similares conforme a la <strong>Directiva 2002/58/CE</strong> (ePrivacy) y la Gu赤a de Cookies de la AEPD:
+            </p>
+
+            <h3>Tipos de cookies que utilizamos</h3>
+            <ul>
+                <li><strong>T谷cnicas/Necesarias:</strong> Autenticaci車n de sesi車n, seguridad CSRF, preferencias de idioma. No requieren consentimiento.</li>
+                
+                <li><strong>Anal赤ticas (requieren consentimiento):</strong> Google Analytics 4 (con IP anonimizada), datos agregados de uso para mejorar UX. Puedes rechazarlas sin afectar la funcionalidad b芍sica.</li>
+                
+                <li><strong>Preferencias:</strong> Configuraciones de avatar, volumen de audio, preferencias de chat. Opcionales pero mejoran la experiencia.</li>
+            </ul>
+
+            <p>
+                Puedes gestionar tus preferencias de cookies en cualquier momento desde el banner inicial o Configuraci車n > Privacidad > Cookies.
+            </p>
+        </article>
+
+        <!-- MENORES -->
+        <article>
+            <h2>?? Protecci車n de menores</h2>
+            
+            <p>
+                Estelar Latam no dirige su actividad a menores de 13 a?os. Si detectamos cuentas de menores de esta edad, las eliminaremos inmediatamente junto con todos sus datos.
+            </p>
+
+            <p>
+                Para usuarios entre 13 y 16 a?os (o mayor赤a de edad digital en su pa赤s), requerimos verificaci車n de consentimiento parental fehaciente mediante:
+            </p>
+            <ul>
+                <li>Tarjeta de cr谷dito con peque?o cargo verificable (m谷todo iVeriCheck).</li>
+                <li>Formulario firmado digitalmente por el tutor legal y enviado a <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a>.</li>
+                <li>Limitaci車n de funciones: menores de 16 no pueden recibir pagos ni ser creadores monetizados (solo espectadores o creadores no monetizados).</li>
+            </ul>
+
+            <p>
+                Los padres/tutores pueden contactar a <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a> para revisar, rectificar o eliminar datos de sus hijos menores.
+            </p>
+        </article>
+
+        <!-- CAMBIOS -->
+        <article>
+            <h2>?? Cambios en esta pol赤tica</h2>
+            
+            <p>
+                Podemos actualizar esta Pol赤tica de Privacidad para reflejar cambios en nuestras pr芍cticas, funcionalidades de la plataforma o requisitos legales (nuevas leyes espa?olas, jurisprudencia del TJUE).
+            </p>
+
+            <p>
+                Te notificaremos mediante:
+            </p>
+            <ul>
+                <li>Correo electr車nico a tu direcci車n registrada para cambios sustanciales (nuevas finalidades, nuevos destinatarios internacionales).</li>
+                <li>Banner en la aplicaci車n/web con resumen de cambios.</li>
+                <li>Fecha de "迆ltima actualizaci車n" visible en la parte superior de este documento.</li>
+            </ul>
+
+            <p>
+                El uso continuado de Estelar Latam despu谷s de la fecha de entrada en vigor de los cambios implica la aceptaci車n de la nueva pol赤tica. Si no est芍s de acuerdo, deber芍s eliminar tu cuenta antes de la fecha de aplicaci車n.
+            </p>
+        </article>
+
+        <!-- CONTACTO -->
+        <article>
+            <h2>?? Contacto del Delegado de Protecci車n de Datos</h2>
+            
+            <div class="contact-highlight" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border: 2px solid #003399;">
+                <strong style="display: block; margin-bottom: 12px; font-size: 1.2rem; color: #003399;">Canal oficial para privacidad</strong>
+                Email: <a href="mailto:estelarlatam.oficial@gmail.com">estelarlatam.oficial@gmail.com</a><br>
+                <small>Tiempo de respuesta: 48-72 horas h芍biles</small><br>
+                <br>
+                <span style="font-size: 0.9rem; color: #666;">
+                Para ejercicio de derechos RGPD, notificaciones de seguridad, consultas sobre datos biom谷tricos, o reclamaciones previas a la AEPD.
+                </span>
+            </div>
+
+            <p style="text-align: center; margin-top: 24px;">
+                Sede social: <strong>Pamplona, Navarra, Espa?a</strong> | Regulado por la <strong>Agencia Espa?ola de Protecci車n de Datos (AEPD)</strong>
+            </p>
+        </article>
+
+        <footer class="privacy-footer">
+            <p style="margin-bottom: 12px;">
+                <strong>Estelar Latam</strong> se compromete con la soberan赤a digital y la privacidad de la comunidad VTuber hispana.
+            </p>
+            
+            <p style="font-size: 0.85rem; color: #999; margin-bottom: 4px;">
+                ? 2026 Estelar Latam. Pol赤tica de Privacidad conforme al RGPD y LOPDGDD espa?ola.
+            </p>
+            <p style="font-size: 0.8rem; color: #aaa;">
+                迆ltima revisi車n: 31/01/2026 | Vigencia: Mundial | Jurisdicci車n: Espa?a/Uni車n Europea
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
